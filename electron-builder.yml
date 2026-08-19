@@ -1,0 +1,19 @@
+appId: com.webreport.app
+productName: Web Report
+directories:
+  output: dist-electron
+files:
+  - dist/**/*
+  - dist-electron/**/*
+  - python/**/*
+  - "!python/__pycache__"
+extraResources:
+  - from: python
+    to: python
+mac:
+  target: dmg
+  category: public.app-category.utilities
+win:
+  target: nsis
+linux:
+  target: AppImage

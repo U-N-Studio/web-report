@@ -1,0 +1,20 @@
+(node:24616) UnhandledPromiseRejectionWarning: Error: Could not locate the bindings file. Tried:
+ → D:\project\web-report\node_modules\better-sqlite3\build\better_sqlite3.node
+ → D:\project\web-report\node_modules\better-sqlite3\build\Debug\better_sqlite3.node
+ → D:\project\web-report\node_modules\better-sqlite3\build\Release\better_sqlite3.node
+ → D:\project\web-report\node_modules\better-sqlite3\out\Debug\better_sqlite3.node
+ → D:\project\web-report\node_modules\better-sqlite3\Debug\better_sqlite3.node
+ → D:\project\web-report\node_modules\better-sqlite3\out\Release\better_sqlite3.node
+ → D:\project\web-report\node_modules\better-sqlite3\Release\better_sqlite3.node
+ → D:\project\web-report\node_modules\better-sqlite3\build\default\better_sqlite3.node
+ → D:\project\web-report\node_modules\better-sqlite3\compiled\18.18.2\win32\x64\better_sqlite3.node
+ → D:\project\web-report\node_modules\better-sqlite3\addon-build\release\install-root\better_sqlite3.node
+ → D:\project\web-report\node_modules\better-sqlite3\addon-build\debug\install-root\better_sqlite3.node
+ → D:\project\web-report\node_modules\better-sqlite3\addon-build\default\install-root\better_sqlite3.node
+ → D:\project\web-report\node_modules\better-sqlite3\lib\binding\node-v119-win32-x64\better_sqlite3.node
+    at bindings (D:\project\web-report\node_modules\bindings\bindings.js:126:9)
+    at new Database (D:\project\web-report\node_modules\better-sqlite3\lib\database.js:48:64)
+    at getDatabase (D:\project\web-report\dist-electron\database\index.js:23:14)
+    at D:\project\web-report\dist-electron\main.js:37:32
+(Use `electron --trace-warnings ...` to show where the warning was created)
+(node:24616) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 1)
