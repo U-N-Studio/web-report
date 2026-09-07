@@ -16,7 +16,7 @@
 
 ```
 L0  L0-index.md (SKILL.md) ← 你在这里：总览 + 判定流程 + 层索引路由
-L1  L1-categories.md       ← 违规类别体系 (9大类/29子类 + 严重等级 + 关键词)
+L1  L1-categories.md       ← 违规类别体系 (9大类/34子类 + 严重等级 + 关键词)
 L2  L2-base-dimension.md   ← 基准维度 (法律道德维度 + 调节因子1/2 + 词汇表 + 公式)
     L2-history-dimension.md ← 历史内容判定轨道 (历史人物法律边界 + 史料真实性 + 历史完整性)
 L3  L3-orthogonal.md       ← 正交维度 (客观主观/意图/真实性 + 模式库 + 信号表 + 评分)
