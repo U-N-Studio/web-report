@@ -21,7 +21,7 @@ L2  L2-base-dimension.md   ← 基准维度 (法律道德维度 + 调节因子1/
     L2-history-dimension.md ← 历史内容判定轨道 (历史人物法律边界 + 史料真实性 + 历史完整性)
 L3  L3-orthogonal.md       ← 正交维度 (客观主观/意图/真实性 + 模式库 + 信号表 + 评分)
 L4  L4-judgment.md         ← 判定规则 (类别规则 + 联动 + 置信度 + 人工复核)
-L5  L5-examples.md         ← 完整示例 (5个典型场景的逐维度评分)
+L5  L5-examples.md         ← 完整示例 (6个典型场景的逐维度评分)
 ```
 
 ### 加载策略
