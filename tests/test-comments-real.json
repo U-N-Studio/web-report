@@ -1,0 +1,210 @@
+[
+  {
+    "id": "hn-001",
+    "platform": "hackernews",
+    "category": "politics",
+    "text": "Since when being against same sex marriage is political extremism? I'm under the impression that for liberals, everything that is against their views is extremism ...",
+    "score": 0,
+    "expected": "neutral-debate"
+  },
+  {
+    "id": "hn-002",
+    "platform": "hackernews",
+    "category": "politics",
+    "text": "It's time to review whether the NSA has done more to harm Americans than to benefit them, and if so, to begin talks on dismantling the agency. This isn't political extremism.",
+    "score": 0,
+    "expected": "neutral"
+  },
+  {
+    "id": "hn-003",
+    "platform": "hackernews",
+    "category": "politics",
+    "text": "So if you like everything on Facebook, the result is political extremism and the most insipid pop culture trash. Bear in mind that extremism is the expected result of filtering bubbles.",
+    "score": 0,
+    "expected": "neutral-analysis"
+  },
+  {
+    "id": "hn-004",
+    "platform": "hackernews",
+    "category": "censorship",
+    "text": "Very appreciate a mention about china government's censorship when many people outside only care about how lucrative regardless of whatever censorship compromise.",
+    "score": 0,
+    "expected": "neutral"
+  },
+  {
+    "id": "hn-005",
+    "platform": "hackernews",
+    "category": "censorship",
+    "text": "It would be pretty great, but it won't happen. Look at all the major tech companies happily collaborating with China's government censorship. They'll talk big about moral obligations and then do the opposite.",
+    "score": 0,
+    "expected": "neutral-criticism"
+  },
+  {
+    "id": "hn-006",
+    "platform": "hackernews",
+    "category": "censorship",
+    "text": "YouTube is a private platform, and they can censor whatever they like. It only interrupts Freedom of Speech if the government influences this censorship. Meanwhile, in China, the government dictates censorship.",
+    "score": 0,
+    "expected": "neutral-comparison"
+  },
+  {
+    "id": "hn-007",
+    "platform": "hackernews",
+    "category": "discrimination",
+    "text": "The fact that one might allude to cancelling one bit of racism with another doesn't make it not racism. I'm defining racism as discrimination based on race.",
+    "score": 0,
+    "expected": "neutral-analysis"
+  },
+  {
+    "id": "hn-008",
+    "platform": "hackernews",
+    "category": "discrimination",
+    "text": "Isn't discrimination racism? It's strange we live in a world where you have to discriminate to not be racist and those of us who are against discrimination are the racist ones.",
+    "score": 0,
+    "expected": "controversial-logic"
+  },
+  {
+    "id": "hn-009",
+    "platform": "hackernews",
+    "category": "discrimination",
+    "text": "That's really the core issue: too many people believe that they can evaluate a person's technical knowledge based on physical appearance, which ends up including gender, race/ethnicity.",
+    "score": 0,
+    "expected": "neutral-observation"
+  },
+  {
+    "id": "hn-010",
+    "platform": "hackernews",
+    "category": "misinfo",
+    "text": "let's cross fingers this doesn't become the obvious vaccine manufacturers are spreading viruses that anti-vaccine conspiracy theorists need.",
+    "score": 0,
+    "expected": "neutral-anti-conspiracy"
+  },
+  {
+    "id": "hn-011",
+    "platform": "hackernews",
+    "category": "misinfo",
+    "text": "DISPROVEN vaccine-autism link. Leaving that word out only helps fuels the anti-vaccine conspiracy theories. They're trying to suppress the truth!!!",
+    "score": 0,
+    "expected": "neutral-debunking"
+  },
+  {
+    "id": "hn-012",
+    "platform": "hackernews",
+    "category": "misinfo",
+    "text": "As someone mentioned, this is a gut feeling from someone who is pro-vaccine. It is true that I don't have information -- I'm actively, sincerely seeking information.",
+    "score": 0,
+    "expected": "neutral-honest-uncertainty"
+  },
+  {
+    "id": "hn-013",
+    "platform": "hackernews",
+    "category": "gaming",
+    "text": "I do agree with your observation. It is generally difficult to find a non-toxic gaming community. This was actually a battlefield group, which brought a lot of older folk.",
+    "score": 0,
+    "expected": "neutral-observation"
+  },
+  {
+    "id": "hn-014",
+    "platform": "hackernews",
+    "category": "gaming",
+    "text": "Doesn't seem like OP is particularly welcome to people from all walks of life. For example, he seems to have a clear bias in denying the existence of toxic gaming communities, never mind Gamergate.",
+    "score": 0,
+    "expected": "neutral-pushback"
+  },
+  {
+    "id": "hn-015",
+    "platform": "hackernews",
+    "category": "debate",
+    "text": "Debates should be in person, I don't think the Internet is the best medium for it. Feel free to disagree with me, but it's a lot harder to lose your cool in person compared to online.",
+    "score": 0,
+    "expected": "neutral-opinion"
+  },
+  {
+    "id": "hn-016",
+    "platform": "hackernews",
+    "category": "debate",
+    "text": "Political discussions tend to derail into ideological rants far more often than technical matters. They also tend to turn into echo chambers, attracting like-minded individuals.",
+    "score": 0,
+    "expected": "neutral-analysis"
+  },
+  {
+    "id": "bili-001",
+    "platform": "bilibili",
+    "category": "social-dispute",
+    "text": "已经被扒完了，这女的就是想起号，之前有外卖争吵，滴滴争吵，反正就是想火",
+    "score": 1319,
+    "expected": "neutral-gossip"
+  },
+  {
+    "id": "bili-002",
+    "platform": "bilibili",
+    "category": "social-dispute",
+    "text": "这个事情一定不能放过，对于这个女孩一定要追究责任，给小孩讨回公道。不然的话，会给小孩留下一辈子的心理阴影，觉得他做错事了，没有人给他撑腰。",
+    "score": 1131,
+    "expected": "neutral-advocacy"
+  },
+  {
+    "id": "bili-003",
+    "platform": "bilibili",
+    "category": "social-dispute",
+    "text": "保护性禁言罢了..这种事本来应该受到处罚的.因为她勒人家脖子",
+    "score": 716,
+    "expected": "neutral-criticism"
+  },
+  {
+    "id": "bili-004",
+    "platform": "bilibili",
+    "category": "social-dispute",
+    "text": "盲猜下一步女方会说出现重度抑郁",
+    "score": 306,
+    "expected": "sarcasm"
+  },
+  {
+    "id": "bili-005",
+    "platform": "bilibili",
+    "category": "social-dispute",
+    "text": "禁言封了有什么用呢？保护起来了而已，这事过完全身而退什么都不用承担，成功了就起号有流量",
+    "score": 170,
+    "expected": "neutral-cynicism"
+  },
+  {
+    "id": "bili-006",
+    "platform": "bilibili",
+    "category": "low-info",
+    "text": "省流[doge]",
+    "score": 126,
+    "expected": "early-exit-low-info"
+  },
+  {
+    "id": "bili-007",
+    "platform": "bilibili",
+    "category": "international",
+    "text": "世界上最抗揍的六样东西：1.伊朗的邮轮 2.美国的航母 3.伊朗核设施 4.美军基地 5.伊朗油气设施 6.美军舰艇",
+    "score": 30,
+    "expected": "neutral-humor"
+  },
+  {
+    "id": "bili-008",
+    "platform": "bilibili",
+    "category": "international",
+    "text": "还是巴基斯坦有活，宣传片指着印度鼻子骂，一点面子都不给，我们这边真应该好好学学，该骂就点名骂，别总是那么含蓄。",
+    "score": 26,
+    "expected": "neutral-opinion"
+  },
+  {
+    "id": "bili-009",
+    "platform": "bilibili",
+    "category": "gaming",
+    "text": "爆率真的好高一抽就出来了",
+    "score": 3,
+    "expected": "neutral-gaming"
+  },
+  {
+    "id": "bili-010",
+    "platform": "bilibili",
+    "category": "gaming",
+    "text": "我不明白，为什么天天保底",
+    "score": 1,
+    "expected": "neutral-gaming-complaint"
+  }
+]
