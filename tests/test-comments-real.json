@@ -99,7 +99,7 @@
     "id": "hn-013",
     "platform": "hackernews",
     "category": "gaming",
-    "text": "I do agree with your observation. It is generally difficult to find a non-toxic gaming community. This was actually a battlefield group, which brought a lot of older folk.",
+    "text": "I do agree with your observation. It is generally difficult to find a non-toxic gaming community.",
     "score": 0,
     "expected": "neutral-observation"
   },
@@ -126,6 +126,54 @@
     "text": "Political discussions tend to derail into ideological rants far more often than technical matters. They also tend to turn into echo chambers, attracting like-minded individuals.",
     "score": 0,
     "expected": "neutral-analysis"
+  },
+  {
+    "id": "hn-017",
+    "platform": "hackernews",
+    "category": "extreme-violence-discuss",
+    "text": "The whole point is that lines are not easy to draw. Religion is a belief system and is not an intrinsic property either. Are you going to allow speech like \"Kill all muslims\" which is not very different from \"Kill all capitalists\".",
+    "score": 0,
+    "expected": "neutral-free-speech-debate"
+  },
+  {
+    "id": "hn-018",
+    "platform": "hackernews",
+    "category": "extreme-violence-discuss",
+    "text": "None of the things you quoted involve him claiming Democrats aren't human or asking that they should be killed. Some involve him saying not to do that. Hitler's manifesto included in it a promise to kill all the capitalists, so there's no comparison to be made here.",
+    "score": 0,
+    "expected": "neutral-debunking-comparison"
+  },
+  {
+    "id": "hn-019",
+    "platform": "hackernews",
+    "category": "extreme-hate-discuss",
+    "text": "BitChute is a cesspit of genuinely hateful and extremist content. That alone keeps away a majority of creators and viewers.",
+    "score": 0,
+    "expected": "neutral-platform-criticism"
+  },
+  {
+    "id": "hn-020",
+    "platform": "hackernews",
+    "category": "extreme-regime",
+    "text": "Our humanity is and must be placed squarely on the task of stopping the aggressor. Authoritarians, dictators and despots do not stop by themselves. They stop only when they are stopped by force.",
+    "score": 0,
+    "expected": "neutral-anti-authoritarian"
+  },
+  {
+    "id": "hn-021",
+    "platform": "hackernews",
+    "category": "extreme-holocaust",
+    "text": "I don't need it inserting console.logs and alert popups with holocaust denials and splash screens with fake videos of white genocide in my apps.",
+    "score": 0,
+    "expected": "neutral-anti-denial"
+  },
+  {
+    "id": "hn-022",
+    "platform": "hackernews",
+    "category": "extreme-race",
+    "text": "If we resolve to silencing and violence without debate how are we better? Have you talked to any Nazi?",
+    "score": 0,
+    "expected": "neutral-free-speech-argument"
   },
   {
     "id": "bili-001",
@@ -206,5 +254,189 @@
     "text": "我不明白，为什么天天保底",
     "score": 1,
     "expected": "neutral-gaming-complaint"
+  },
+  {
+    "id": "bili-011",
+    "platform": "bilibili",
+    "category": "history-nihilism",
+    "text": "刘关张不是真兄弟，刘备死的时候关张没哭——转自某营销号",
+    "score": 19211,
+    "expected": "violation-history-nihilism-P04"
+  },
+  {
+    "id": "bili-012",
+    "platform": "bilibili",
+    "category": "color-revolution",
+    "text": "希望颜色革命这道靓丽的风景线在美国越来越多[doge]",
+    "score": 18380,
+    "expected": "sarcasm-ironic-foreign"
+  },
+  {
+    "id": "bili-013",
+    "platform": "bilibili",
+    "category": "color-revolution",
+    "text": "大多数中国人已经觉醒了，那一套用处不大，要颜色革命也得从我们新一代青年人身体上踏过去才行！坚决支持国家！",
+    "score": 17882,
+    "expected": "neutral-patriotic-defense"
+  },
+  {
+    "id": "bili-014",
+    "platform": "bilibili",
+    "category": "regional-discrimination",
+    "text": "人人都喜欢寻找身份认同，这无可厚非，但是通过地域黑的方式来沾沾自喜，绝对是最没有品位的一种，因为太没有格调，太没有档次。",
+    "score": 17841,
+    "expected": "neutral-anti-discrimination"
+  },
+  {
+    "id": "bili-015",
+    "platform": "bilibili",
+    "category": "regional-discrimination",
+    "text": "地域黑是破坏国家民族感情的行为，遇到这种人不用理性思考，直接骂死他。[doge]",
+    "score": 3191,
+    "expected": "violation-insult-L05"
+  },
+  {
+    "id": "bili-016",
+    "platform": "bilibili",
+    "category": "martyr-defense",
+    "text": "[保佑]希望这个微博用户有事",
+    "score": 7530,
+    "expected": "sarcasm-veiled-threat"
+  },
+  {
+    "id": "bili-017",
+    "platform": "bilibili",
+    "category": "martyr-defense",
+    "text": "微博该被约谈了，是时候整治了。",
+    "score": 6911,
+    "expected": "neutral-regulatory-advocacy"
+  },
+  {
+    "id": "bili-018",
+    "platform": "bilibili",
+    "category": "hate-country",
+    "text": "什么鬼玩意儿？我只是痛恨压榨工人的资本家[笑哭]",
+    "score": 1106,
+    "expected": "neutral-class-criticism"
+  },
+  {
+    "id": "bili-019",
+    "platform": "bilibili",
+    "category": "hate-country",
+    "text": "中国高速发展的代价是6亿农民，2亿底层工人和无数留守儿童和空巢老人\n接下来如果不能处理好分配问题，这其中潜藏着巨大的危机",
+    "score": 488,
+    "expected": "neutral-social-analysis"
+  },
+  {
+    "id": "bili-020",
+    "platform": "bilibili",
+    "category": "taiwan-split",
+    "text": "联合国早已经在法律上，程序上确定世界上只有一个中国，台湾是中国一个省，那么，我们就可以颁布反分裂法统一祖国，我们中国人太讲仁义礼智信，太尊重美西方。现在，不需要在意任何国家的任何干涉，这是我们国家自己内部的事，支持国家！",
+    "score": 581,
+    "expected": "neutral-anti-split-legal"
+  },
+  {
+    "id": "bili-021",
+    "platform": "bilibili",
+    "category": "taiwan-split",
+    "text": "真到了审判的时候还是建议公审，比如全国直播的万人公审大会，热度一定很高[抠鼻]",
+    "score": 376,
+    "expected": "sarcasm-excessive-punishment"
+  },
+  {
+    "id": "bili-022",
+    "platform": "bilibili",
+    "category": "fan-circle",
+    "text": "我以为我脱离了苦海，谁知道，大学分完宿舍，一个肖战粉丝，一个王一博粉丝，一个虞书欣粉丝。麻了[无语]",
+    "score": 10004,
+    "expected": "neutral-fan-circle-complaint"
+  },
+  {
+    "id": "bili-023",
+    "platform": "bilibili",
+    "category": "anti-foreign",
+    "text": "终于直接点名美国了，来来来，口号喊一遍，自由美利坚，枪击每一天",
+    "score": 11349,
+    "expected": "sarcasm-ironic-foreign"
+  },
+  {
+    "id": "bili-024",
+    "platform": "bilibili",
+    "category": "history-nihilism",
+    "text": "蝗虫说带明一统世界，永乐大典有一切，西方是偷永乐大典的羊人，也属于历史虚无主义",
+    "score": 3,
+    "expected": "neutral-identify-nihilism"
+  },
+  {
+    "id": "bili-025",
+    "platform": "bilibili",
+    "category": "history-nihilism",
+    "text": "\"今人说古人，活人说死人，无非就是欺负对方不会说话。\"",
+    "score": 9841,
+    "expected": "neutral-philosophical-observation"
+  },
+  {
+    "id": "bili-026",
+    "platform": "bilibili",
+    "category": "rumu-jingri",
+    "text": "很复杂啊，这种东西。一般来说爆rh了之后就该下架，但是名创优品等等店铺还是一直联动，所以有些人就觉得没下架就说明没rh，然后继续购买什么什么的。我们班有的人就是这样，买了联动的周边，我问不是说rh了吗为啥还买，人家说不是还在卖吗，说明没有rh，就买了。感觉就像是因果论和果因论倒置了。",
+    "score": 950,
+    "expected": "neutral-consumer-logic-discussion"
+  },
+  {
+    "id": "bili-027",
+    "platform": "bilibili",
+    "category": "fifty-cent",
+    "text": "五毛：默认收了钱\n粉红：没有被收买的意思\n基本盘：强调自发性\n越来越自绝于人民群众[笑哭]",
+    "score": 24,
+    "expected": "sarcasm-political-labels"
+  },
+  {
+    "id": "bili-028",
+    "platform": "bilibili",
+    "category": "class-struggle",
+    "text": "我问一下庸俗经济学的拥趸者一个问题，如果老板和工人之间是公平交易，为什么社会总消费总是低于社会产出那么多？",
+    "score": 173,
+    "expected": "neutral-academic-question"
+  },
+  {
+    "id": "bili-029",
+    "platform": "bilibili",
+    "category": "vpn",
+    "text": "其实都知道可以看别乱发，发了不该发的立马就打电话了别以为上面什么都不知道，你的数据还是经过三大运营商的不是自己拉的线路",
+    "score": 144,
+    "expected": "neutral-surveillance-awareness"
+  },
+  {
+    "id": "bili-030",
+    "platform": "bilibili",
+    "category": "public-intellectual",
+    "text": "10年代的公知其实也没什么，对于生活和社会也没有掀起什么波澜，顶多就是抓住了民众看热闹的心态，发泄一下生活的不满而已，但是相比之下，和尚派公知的破坏性和洗脑性就很恐怖了，这个派系确实是掀起了一场社会动荡的风波的。",
+    "score": 60,
+    "expected": "neutral-social-commentary"
+  },
+  {
+    "id": "bili-031",
+    "platform": "bilibili",
+    "category": "public-intellectual",
+    "text": "这部污蔑中国的纪录片 别再拿出来标榜你的艺术",
+    "score": 6,
+    "expected": "violation-defamation-Q01"
+  },
+  {
+    "id": "bili-032",
+    "platform": "bilibili",
+    "category": "xenophobia",
+    "text": "[笑哭]全是蛙岛传进来的",
+    "score": 3,
+    "expected": "violation-regional-slur-L05"
+  },
+  {
+    "id": "bili-033",
+    "platform": "bilibili",
+    "category": "martyr-defense",
+    "text": "如果你不愿意走在前面，请你跟着队伍；如果你不愿意跟着队伍走，请你在路边围观；如果你不愿意在路边围观，请你在网上呐喊；如果你这些都做不到，请默默闭上你的眼，坐下来享受我们为你争取来的权利；如果你这都做不到，请你收起你的嘲讽跟无视的目光。你的视而不见，让我十分忧伤；你的冷嘲热讽，让我倍感心伤！我们争取的也是属于你的阳光啊！转发",
+    "score": 2635,
+    "expected": "neutral-patriotic-advocacy"
   }
 ]

@@ -88,3 +88,37 @@
 | 绝对化表达 | 所有、任何、绝不、一定、永远、史上最 | 客观主观维度(L3) |
 | 饭圈行为 | 冲！、踩下去、脱粉回踩、家人们 | 客观主观维度(L3) |
 | 忠义精神否定 | 愚忠、给主子卖命、被洗脑、忠义=奴性、走狗 | 历史轨道(L2-history) → 违反道德 |
+
+---
+
+## 英文关键词库（English Keyword Library）
+
+> 供 Step 1 对英文评论快速预扫描使用。命中任一关键词即标记候选类别。
+> 中文关键词库优先扫描；若评论主体语言为英文，则使用本库。
+> 语言检测规则：若评论中≥60%的词为英文（按空格分词后英文token占比），则使用英文关键词库。
+
+### 违法关键词（English — 任何场景均判违法，不受宽容度调节）
+
+| 类别 | 关键词/模式 | 对应中文类别 |
+|------|------------|-------------|
+| 涉政 | overthrow government, regime change, secession, independence movement, split the country | P01/P02 |
+| 暴恐 | bomb making, bomb recipe, kill all, ethnic cleansing, race war, jihad attack | V01/V02/V03 |
+| 侮辱英烈 | deny holocaust, holocaust fake, holocaust hoax, nazi was right | P04（英烈类比） |
+| 色情 | cp group, nudes trade, escort service, hookup | S01/S02 |
+| 诈骗 | investment return guaranteed, crypto giveaway, phishing link | F01/F02 |
+| 赌博 | betting odds, casino agent, sports pick, gambling group | G01/G02 |
+
+### 模式库关键词（English — 标记候选模式，需后续语境校验）
+
+| 模式 | 关键词/模式 | 对应正交维度 |
+|------|------------|-------------|
+| passive-aggressive | oh sure, great idea 👍, sure jan, thanks Obama, bless your heart | 意图维度(L3) |
+| evasion slang | f*ggot, n-word, r*tard, k*ke (censored slurs) | 意图维度(L3) |
+| pseudoscience | 5G causes covid, flat earth, chemtrails, microchip vaccine | 真实性维度(L3) |
+| unsourced claim | everyone knows, it's been confirmed, insider says | 真实性维度(L3) |
+| absolutist | all X are, every single, always/never, literally everyone | 客观主观维度(L3) |
+| hate group | white supremacy, white genocide, great replacement | 涉政(P01/P05) |
+| xenophobia | invasion of immigrants, they're replacing us, go back to your country | 低俗(L05) |
+| sexism/misogyny | women belong in kitchen, make me a sandwich, beta/cuck | 低俗(L05) |
+| transphobia | trans is mental illness, only two genders, groomer | 低俗(L05) |
+| islamophobia | all muslims are terrorists, ban islam, sharia takeover | 涉政(P05) |
