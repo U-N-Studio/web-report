@@ -574,5 +574,205 @@
     "text": "评论区的有些人真是他妈的有意思。前些日子一个一个的，喊着团结喊的都要欢，等到现在，某些人遇到不知道这件事的人，或者不了解全貌的人，第一句话不是去告知，而是在说不会自己查吗？",
     "score": 206,
     "expected": "violation-swearing-Q01"
+  },
+  {
+    "id": "dm-001",
+    "platform": "bilibili-danmaku",
+    "category": "P01-P02-regime",
+    "text": "如果想进中国，必然先从我的尸体上跨过去",
+    "score": 0,
+    "expected": "neutral-patriotic-defense"
+  },
+  {
+    "id": "dm-002",
+    "platform": "bilibili-danmaku",
+    "category": "P01-P02-regime",
+    "text": "要坚决抵抗意识形态渗透！",
+    "score": 0,
+    "expected": "positive-anti-infiltration"
+  },
+  {
+    "id": "dm-003",
+    "platform": "bilibili-danmaku",
+    "category": "P01-P02-regime",
+    "text": "看到前苏联我哭了，苏联就是被这样洗脑没了的",
+    "score": 0,
+    "expected": "neutral-historical-warning"
+  },
+  {
+    "id": "dm-004",
+    "platform": "bilibili-danmaku",
+    "category": "P01-P02-regime",
+    "text": "男儿何不带吴钩，收取北美五十州",
+    "score": 0,
+    "expected": "sarcasm-ironic-militarism"
+  },
+  {
+    "id": "dm-005",
+    "platform": "bilibili-danmaku",
+    "category": "P01-P02-hk",
+    "text": "这枪声真好听，我倒回去听了十遍",
+    "score": 0,
+    "expected": "violation-glorify-violence-V03"
+  },
+  {
+    "id": "dm-006",
+    "platform": "bilibili-danmaku",
+    "category": "P01-P02-hk",
+    "text": "打的好！大快人心！",
+    "score": 0,
+    "expected": "neutral-law-enforcement-support"
+  },
+  {
+    "id": "dm-007",
+    "platform": "bilibili-danmaku",
+    "category": "P01-P02-hk",
+    "text": "极  度  舒  适",
+    "score": 0,
+    "expected": "sarcasm-schadenfreude"
+  },
+  {
+    "id": "dm-008",
+    "platform": "bilibili-danmaku",
+    "category": "P01-P02-hk",
+    "text": "鲁迅先生说的好：我不惮以最坏的恶意，来揣测中国人……",
+    "score": 0,
+    "expected": "neutral-literary-quote"
+  },
+  {
+    "id": "dm-009",
+    "platform": "bilibili-danmaku",
+    "category": "P04-nanjing",
+    "text": "我们在等他们道歉，他们却在等我们遗忘",
+    "score": 0,
+    "expected": "positive-memory-preservation"
+  },
+  {
+    "id": "dm-010",
+    "platform": "bilibili-danmaku",
+    "category": "P04-nanjing",
+    "text": "远离战争？这根本不是战争的事！这是反人类！是恶魔行为！",
+    "score": 0,
+    "expected": "neutral-strong-condemnation"
+  },
+  {
+    "id": "dm-011",
+    "platform": "bilibili-danmaku",
+    "category": "P04-nanjing",
+    "text": "接下来是疯狗进入南京的场面",
+    "score": 0,
+    "expected": "neutral-metaphorical-condemnation"
+  },
+  {
+    "id": "dm-012",
+    "platform": "bilibili-danmaku",
+    "category": "P04-martyr",
+    "text": "所有事迹肯定都有夸大",
+    "score": 0,
+    "expected": "controversial-martyr-skepticism"
+  },
+  {
+    "id": "dm-013",
+    "platform": "bilibili-danmaku",
+    "category": "P04-martyr",
+    "text": "抗日神剧算不算，抗日神剧是对抗战历史的亵渎",
+    "score": 0,
+    "expected": "neutral-anti-distortion"
+  },
+  {
+    "id": "dm-014",
+    "platform": "bilibili-danmaku",
+    "category": "history-great-leap",
+    "text": "埃德加斯诺记录的饥民卖东西的顺序是：女儿，老婆，儿子，最后是房梁",
+    "score": 0,
+    "expected": "neutral-historical-source-citation"
+  },
+  {
+    "id": "dm-015",
+    "platform": "bilibili-danmaku",
+    "category": "P05-ethnic",
+    "text": "其实我觉得，说现在满族人也属于中国的一部分，会更合理一些。",
+    "score": 0,
+    "expected": "positive-inclusive-view"
+  },
+  {
+    "id": "dm-016",
+    "platform": "bilibili-danmaku",
+    "category": "P05-ethnic",
+    "text": "不是，我就问一下，弹幕是傻子吗？就你真的觉得底层人过得好是吗？",
+    "score": 0,
+    "expected": "violation-insult-Q01"
+  },
+  {
+    "id": "dm-017",
+    "platform": "bilibili-danmaku",
+    "category": "P03-vpn",
+    "text": "不插卡就行了",
+    "score": 0,
+    "expected": "violation-circumvention-advice"
+  },
+  {
+    "id": "dm-018",
+    "platform": "bilibili-danmaku",
+    "category": "P03-russia-ukraine",
+    "text": "可喜可贺",
+    "score": 0,
+    "expected": "violation-glorify-death-V03"
+  },
+  {
+    "id": "dm-019",
+    "platform": "bilibili-danmaku",
+    "category": "P03-russia-ukraine",
+    "text": "无比舒服",
+    "score": 0,
+    "expected": "violation-glorify-death-V03"
+  },
+  {
+    "id": "dm-020",
+    "platform": "bilibili-danmaku",
+    "category": "P03-hate-country",
+    "text": "这货纯杯子",
+    "score": 0,
+    "expected": "violation-insult-Q01"
+  },
+  {
+    "id": "dm-021",
+    "platform": "bilibili-danmaku",
+    "category": "P03-israel-palestine",
+    "text": "请记住现在是谁视角展开的故事叙述",
+    "score": 0,
+    "expected": "neutral-media-literacy"
+  },
+  {
+    "id": "dm-022",
+    "platform": "bilibili-danmaku",
+    "category": "P05-xinjiang",
+    "text": "那么这么多的土地哪里来的呢？细思头皮发麻",
+    "score": 0,
+    "expected": "sarcasm-implicit-criticism"
+  },
+  {
+    "id": "dm-023",
+    "platform": "bilibili-danmaku",
+    "category": "P04-hist-nihilism",
+    "text": "《懂了，秦桧编了三体》",
+    "score": 0,
+    "expected": "neutral-humor-absurdity"
+  },
+  {
+    "id": "dm-024",
+    "platform": "bilibili-danmaku",
+    "category": "P02-taiwan",
+    "text": "美国敢跟中国开战？哪个政客有这个胆量",
+    "score": 0,
+    "expected": "neutral-geopolitical-assertion"
+  },
+  {
+    "id": "dm-025",
+    "platform": "bilibili-danmaku",
+    "category": "P06-cult",
+    "text": "哪怕从宗教的观点来看，抛弃家庭也很抽象，也很扯。",
+    "score": 0,
+    "expected": "neutral-anti-cult-argument"
   }
 ]
