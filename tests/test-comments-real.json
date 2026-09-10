@@ -438,5 +438,141 @@
     "text": "如果你不愿意走在前面，请你跟着队伍；如果你不愿意跟着队伍走，请你在路边围观；如果你不愿意在路边围观，请你在网上呐喊；如果你这些都做不到，请默默闭上你的眼，坐下来享受我们为你争取来的权利；如果你这都做不到，请你收起你的嘲讽跟无视的目光。你的视而不见，让我十分忧伤；你的冷嘲热讽，让我倍感心伤！我们争取的也是属于你的阳光啊！转发",
     "score": 2635,
     "expected": "neutral-patriotic-advocacy"
+  },
+  {
+    "id": "bili-034",
+    "platform": "bilibili",
+    "category": "cult",
+    "text": "这个全能教当初我奶也加入过，当时我刚退伍回来，因为很久没见到她所以那段时间在奶奶家住，有时她去教会回来我会和她聊天问她一些教会的事，前两次聊天得知基本上是基督教那些东西，可是随着次数增加，我发现这个教会宣传的东西总是有意无意的给人灌输一些奇怪的东西，后来我就不再让我奶奶去了",
+    "score": 9417,
+    "expected": "neutral-anti-cult-testimony"
+  },
+  {
+    "id": "bili-035",
+    "platform": "bilibili",
+    "category": "cult",
+    "text": "邪教传播现在采用十分隐蔽的线下方式传播，大家一定要擦亮眼睛抵制邪教！",
+    "score": 8743,
+    "expected": "positive-anti-cult-warning"
+  },
+  {
+    "id": "bili-036",
+    "platform": "bilibili",
+    "category": "regional",
+    "text": "那些留言说自己河南人骗的，我很同情他们。但是他们会在这儿说这些是因为这是反对河南地域黑的视频啊，我还被北京人骗过嘞（并没有在黑北京人）。这大概是类似幸存者偏差的，因为只有被河南人骗过的才会在这里留言，没被骗以及被其他区域人骗过的不会留言，所以那些被骗的人只能证明部分河南人曾经骗过人，并不能证明河南人都骗人或者河南人骗人比外省人更多。天下乌鸦一般黑，哪里都会有坏人。",
+    "score": 1514,
+    "expected": "positive-anti-discrimination-analysis"
+  },
+  {
+    "id": "bili-037",
+    "platform": "bilibili",
+    "category": "regional",
+    "text": "我谈个对象\n哦 对方啥家庭\n河南的\n啪！\n我让你和男的 和男的",
+    "score": 1339,
+    "expected": "violation-regional-stereotype-L05"
+  },
+  {
+    "id": "bili-038",
+    "platform": "bilibili",
+    "category": "gender",
+    "text": "我们完全具备不打老婆孩子的能力[doge]",
+    "score": 2381,
+    "expected": "sarcasm-domestic-violence"
+  },
+  {
+    "id": "bili-039",
+    "platform": "bilibili",
+    "category": "gender",
+    "text": "差不多得了，表面女生不想要，真谈起来彩礼的时候就沉默是金，默认听父母的，装作无奈。",
+    "score": 150,
+    "expected": "neutral-gender-criticism"
+  },
+  {
+    "id": "bili-040",
+    "platform": "bilibili",
+    "category": "history",
+    "text": "我姥爷兄弟六个 那三年还剩两个",
+    "score": 624,
+    "expected": "neutral-historical-testimony"
+  },
+  {
+    "id": "bili-041",
+    "platform": "bilibili",
+    "category": "history",
+    "text": "我爷爷的三个姐被活活饿死，到现在人埋在哪都不知道[微笑]",
+    "score": 567,
+    "expected": "neutral-historical-trauma"
+  },
+  {
+    "id": "bili-042",
+    "platform": "bilibili",
+    "category": "history",
+    "text": "是个好电影，但是一直不太愿意看这个电影，作为隔壁的兄弟省份，革命老区。对饥荒有着深刻的认知。我们那里见面打招呼第一句话就是你吃了吗？。从小听到大。1942发生的背景是：1938年，老蒋下令炸掉花园口，造成黄河决堤，千万人无家可归。",
+    "score": 508,
+    "expected": "neutral-historical-context"
+  },
+  {
+    "id": "bili-043",
+    "platform": "bilibili",
+    "category": "japan-rel",
+    "text": "这个视频没有针对日本民众，旭日旗是日本军国主义旗",
+    "score": 641,
+    "expected": "neutral-factual-clarification"
+  },
+  {
+    "id": "bili-044",
+    "platform": "bilibili",
+    "category": "japan-rel",
+    "text": "不能烧国旗……嗯，看错了，你随便整",
+    "score": 169,
+    "expected": "neutral-then-corrected"
+  },
+  {
+    "id": "bili-045",
+    "platform": "bilibili",
+    "category": "violence",
+    "text": "偷钱是可恶，可是轮不到公司老板用刑吧？应该让司法部门根据法律去惩罚吧。公司老板人好点还可控，万一是个坏种，这样滥用私刑都没事，他以后想打谁打谁，当地老百姓估计要不好过了。",
+    "score": 40,
+    "expected": "neutral-rule-of-law-advocacy"
+  },
+  {
+    "id": "bili-046",
+    "platform": "bilibili",
+    "category": "social-hot",
+    "text": "这种人一般关到局子里，银手镯一戴，黄马甲一穿，镜头一action，招牌一句话：我当时不知道怎么肥事，现在灰藏厚匪",
+    "score": 10043,
+    "expected": "sarcasm-criminal-stereotype"
+  },
+  {
+    "id": "bili-047",
+    "platform": "bilibili",
+    "category": "privacy",
+    "text": "这个结局让人揪心 每个人都应该被善待",
+    "score": 1092,
+    "expected": "positive-empathy"
+  },
+  {
+    "id": "bili-048",
+    "platform": "bilibili",
+    "category": "fraud",
+    "text": "自己也是刚做的拼多多，感觉还可以吧，可能是因为有这方面资料吧，有想要做好拼多多的给我点个赞，然后私聊我，我可以分享这方面的资料，一起学习呀",
+    "score": 168,
+    "expected": "violation-suspicious-funnel-O04"
+  },
+  {
+    "id": "bili-049",
+    "platform": "bilibili",
+    "category": "porn",
+    "text": "【很哇塞哟→→】@dm57AF0y18@香杯五桃齁乳稠茶有@黄泉洛河示@就爱熬夜略略略眯",
+    "score": 130,
+    "expected": "violation-spam-porn-funnel-S02"
+  },
+  {
+    "id": "bili-050",
+    "platform": "bilibili",
+    "category": "complaint",
+    "text": "评论区的有些人真是他妈的有意思。前些日子一个一个的，喊着团结喊的都要欢，等到现在，某些人遇到不知道这件事的人，或者不了解全貌的人，第一句话不是去告知，而是在说不会自己查吗？",
+    "score": 206,
+    "expected": "violation-swearing-Q01"
   }
 ]
