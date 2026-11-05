@@ -22,7 +22,7 @@ export class PythonProcessBridge implements IProcessBridge {
     envExtra?: Record<string, string> | (() => Record<string, string>);
   }) {
     this.port = opts.port ?? 8765;
-    this.readyPattern = opts.readyPattern ?? 'Uvicorn running';
+    this.readyPattern = opts.readyPattern ?? 'Application startup complete';
     this.executable = opts.executable;
     this.args = opts.args;
     this.cwd = opts.cwd;

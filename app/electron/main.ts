@@ -35,7 +35,6 @@ app.whenReady().then(async () => {
   initBackend(createLocalPythonBackend());
   registerAllIPC();
   getDatabase();
-  createWindow();
 
   try {
     await getBackend().start();
@@ -46,6 +45,8 @@ app.whenReady().then(async () => {
   } catch (e) {
     console.error('Backend startup failed:', e);
   }
+
+  createWindow();
 });
 
 app.on('window-all-closed', () => {
