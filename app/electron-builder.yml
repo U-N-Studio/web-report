@@ -2,13 +2,14 @@ appId: com.webreport.app
 productName: Web Report
 directories:
   output: dist-electron
+  app: .
 files:
   - dist/**/*
   - dist-electron/**/*
-  - python/**/*
-  - "!python/__pycache__"
+  - backend/**/*
+  - "!backend/__pycache__"
 extraResources:
-  - from: python
+  - from: backend
     to: python
 mac:
   target: dmg

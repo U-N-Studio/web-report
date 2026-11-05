@@ -1,0 +1,242 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Web Report Backend API",
+    "version": "1.0.0",
+    "description": "通用后端接口定义，任何语言实现此规范即可对接 Electron 前端"
+  },
+  "servers": [
+    { "url": "http://127.0.0.1:8765", "description": "本地后端" }
+  ],
+  "paths": {
+    "/health": {
+      "get": {
+        "summary": "健康检查",
+        "operationId": "health",
+        "responses": {
+          "200": {
+            "description": "服务状态",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/HealthResponse" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/homepage": {
+      "post": {
+        "summary": "获取平台首页视频",
+        "operationId": "fetchHomepage",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/HomepageRequest" }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "视频列表",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/SearchResponse" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/search": {
+      "post": {
+        "summary": "搜索视频",
+        "operationId": "search",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/SearchRequest" }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "搜索结果",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/SearchResponse" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/analyze": {
+      "post": {
+        "summary": "分析视频评论",
+        "operationId": "analyze",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/AnalyzeRequest" }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "分析结果",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/AnalyzeResponse" }
+              }
+            }
+          },
+          "400": {
+            "description": "配置缺失等错误",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/config": {
+      "post": {
+        "summary": "更新后端配置",
+        "operationId": "updateConfig",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/ConfigRequest" }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "当前配置",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ConfigResponse" }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "HealthResponse": {
+        "type": "object",
+        "properties": {
+          "status": { "type": "string", "example": "ok" },
+          "adapters": {
+            "type": "array",
+            "items": { "type": "string" },
+            "example": ["bilibili", "youtube"]
+          }
+        },
+        "required": ["status"]
+      },
+      "HomepageRequest": {
+        "type": "object",
+        "properties": {
+          "platform": { "type": "string", "example": "bilibili" },
+          "keyword": { "type": "string", "example": "" }
+        },
+        "required": ["platform"]
+      },
+      "SearchRequest": {
+        "type": "object",
+        "properties": {
+          "platform": { "type": "string", "example": "bilibili" },
+          "keyword": { "type": "string", "example": "搞笑" },
+          "url": { "type": "string", "nullable": true }
+        },
+        "required": ["platform", "keyword"]
+      },
+      "SearchResponse": {
+        "type": "object",
+        "properties": {
+          "videos": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/Video" }
+          }
+        },
+        "required": ["videos"]
+      },
+      "Video": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "title": { "type": "string" },
+          "url": { "type": "string" },
+          "author": { "type": "string", "nullable": true },
+          "thumbnail": { "type": "string", "nullable": true }
+        },
+        "required": ["id", "title", "url"]
+      },
+      "AnalyzeRequest": {
+        "type": "object",
+        "properties": {
+          "platform": { "type": "string", "example": "bilibili" },
+          "video_id": { "type": "string", "example": "BV1xx411c7mD" },
+          "ai_mode": { "type": "string", "enum": ["cloud", "local"], "default": "cloud" },
+          "model_name": { "type": "string", "nullable": true, "example": "gpt-4o-mini" },
+          "custom_rules": { "type": "string", "nullable": true }
+        },
+        "required": ["platform", "video_id"]
+      },
+      "AnalyzeResponse": {
+        "type": "object",
+        "properties": {
+          "video": { "$ref": "#/components/schemas/Video" },
+          "comments": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/AnalyzedComment" }
+          },
+          "total": { "type": "integer", "example": 100 },
+          "flagged": { "type": "integer", "example": 5 }
+        },
+        "required": ["video", "comments", "total", "flagged"]
+      },
+      "AnalyzedComment": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "author": { "type": "string", "nullable": true },
+          "content": { "type": "string" },
+          "original_url": { "type": "string", "nullable": true },
+          "category": { "type": "string", "nullable": true, "example": "涉政" },
+          "is_violation": { "type": "boolean", "default": false },
+          "confidence": { "type": "number", "format": "float", "default": 0.0 },
+          "ai_reason": { "type": "string", "nullable": true }
+        },
+        "required": ["id", "content", "is_violation", "confidence"]
+      },
+      "ConfigRequest": {
+        "type": "object",
+        "additionalProperties": true,
+        "description": "键值对配置，如 aiMode, apiKey, apiBase, modelName, ollamaUrl, bilibiliSessdata 等"
+      },
+      "ConfigResponse": {
+        "type": "object",
+        "additionalProperties": true,
+        "description": "更新后的完整配置回显"
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "properties": {
+          "detail": { "type": "string", "example": "未配置 AI API Key" }
+        },
+        "required": ["detail"]
+      }
+    }
+  }
+}

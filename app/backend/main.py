@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.responses import JSONResponse
 from .models import SearchRequest, SearchResponse, AnalysisRequest, AnalysisResponse, Video
 from .adapters import get as get_adapter, list_available
-from .ai import analyze_comments
+from .moderation import analyze_comments
 from .config import get_config, update_config
 from .adapters.bilibili import BilibiliAdapter  # noqa: F401
 from .adapters.youtube import YouTubeAdapter  # noqa: F401

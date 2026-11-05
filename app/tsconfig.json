@@ -16,9 +16,9 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./frontend/src/*"]
     }
   },
-  "include": ["src", "electron"],
+  "include": ["frontend/src", "electron"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

@@ -2,7 +2,7 @@ import { app, BrowserWindow } from 'electron';
 import path from 'path';
 import { getDatabase, closeDatabase } from './database';
 import { registerAllIPC } from './ipc';
-import { startPythonBackend, stopPythonBackend } from './python-bridge';
+import { initBackend, createLocalPythonBackend, getBackend } from './backend';
 
 let mainWindow: BrowserWindow | null = null;
 
@@ -32,14 +32,15 @@ function createWindow() {
 }
 
 app.whenReady().then(() => {
+  initBackend(createLocalPythonBackend());
   registerAllIPC();
   getDatabase();
   createWindow();
-  startPythonBackend().catch(() => {});
+  getBackend().start().catch(() => {});
 });
 
 app.on('window-all-closed', () => {
-  stopPythonBackend();
+  getBackend().stop();
   closeDatabase();
   app.quit();
 });

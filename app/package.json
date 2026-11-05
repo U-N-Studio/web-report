@@ -4,14 +4,14 @@
   "description": "",
   "main": "dist-electron/main.js",
   "directories": {
-    "doc": "docs"
+    "doc": "../docs"
   },
   "scripts": {
-    "dev": "vite",
-    "build": "tsc --project tsconfig.electron.json && vite build",
-    "preview": "vite preview",
-    "electron:start": "tsc --project tsconfig.electron.json && vite build && electron .",
-    "electron:build": "tsc --project tsconfig.electron.json && vite build && electron-builder"
+    "dev": "npx vite",
+    "build": "npx tsc --project tsconfig.electron.json && npx vite build",
+    "preview": "npx vite preview",
+    "electron:start": "npx tsc --project tsconfig.electron.json && npx vite build && npx electron .",
+    "electron:build": "npx tsc --project tsconfig.electron.json && npx vite build && npx electron-builder"
   },
   "keywords": [],
   "author": "",
@@ -32,6 +32,7 @@
     "@types/react-dom": "^18.3.7",
     "@types/uuid": "^9.0.8",
     "@vitejs/plugin-react": "^4.7.0",
+    "electron": "^28.3.3",
     "electron-builder": "^24.13.3",
     "typescript": "^5.9.3",
     "vite": "^5.4.21"
