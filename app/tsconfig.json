@@ -19,6 +19,5 @@
       "@/*": ["./frontend/src/*"]
     }
   },
-  "include": ["frontend/src", "electron"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": ["frontend/src", "electron"]
 }

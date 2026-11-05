@@ -10,7 +10,7 @@ export default function ReportPage() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    api.getReports().then((r) => setReports(r as unknown[]));
+    api.getReports().then((r: unknown) => setReports(r as unknown[]));
   }, []);
 
   if (reports.length === 0) return <Empty description="暂无报告" />;

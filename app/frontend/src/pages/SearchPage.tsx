@@ -15,7 +15,7 @@ export default function SearchPage() {
   useEffect(() => {
     if (selectedPlatform === 'bilibili') {
       setLoading(true);
-      api.fetchHomepage('bilibili').then((r) => {
+      api.fetchHomepage('bilibili').then((r: unknown) => {
         setVideos(r as unknown[]);
       }).catch(() => {
         message.error('加载首页失败');

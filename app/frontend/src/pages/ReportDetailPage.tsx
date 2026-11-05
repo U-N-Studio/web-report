@@ -13,7 +13,7 @@ export default function ReportDetailPage() {
   const [report, setReport] = useState<unknown | null>(null);
 
   useEffect(() => {
-    if (id) api.getReportDetail(id).then((r) => setReport(r));
+    if (id) api.getReportDetail(id).then((r: unknown) => setReport(r));
   }, [id]);
 
   if (!report) return <div>加载中...</div>;
@@ -26,7 +26,7 @@ export default function ReportDetailPage() {
 
   const handleToggle = async (commentId: string, isViolation: boolean) => {
     await api.updateCommentStatus(commentId, isViolation);
-    if (id) api.getReportDetail(id).then((r) => setReport(r));
+    if (id) api.getReportDetail(id).then((r: unknown) => setReport(r));
   };
 
   const violations = r.comments.filter((c) => c.is_violation);
@@ -44,11 +44,11 @@ export default function ReportDetailPage() {
       </Row>
       <Title level={5}>违规评论 ({violations.length})</Title>
       {violations.map((c) => (
-        <CommentCard key={c.id} {...c} onToggleViolation={handleToggle} />
+        <CommentCard key={c.id} {...c} isViolation={c.is_violation} aiReason={c.ai_reason} onToggleViolation={handleToggle} />
       ))}
       <Title level={5} style={{ marginTop: 16 }}>全部评论 ({r.comments.length})</Title>
       {r.comments.map((c) => (
-        <CommentCard key={c.id} {...c} onToggleViolation={handleToggle} />
+        <CommentCard key={c.id} {...c} isViolation={c.is_violation} aiReason={c.ai_reason} onToggleViolation={handleToggle} />
       ))}
     </div>
   );

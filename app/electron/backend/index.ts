@@ -1,8 +1,8 @@
 import { IBackendAPI, IProcessBridge } from './types';
 import { HttpBackend } from './http-backend';
-import { PythonProcessBridge, createPythonBridge } from './process-bridge';
+import { createPythonBridge } from './process-bridge';
 
-export { IBackendAPI, IProcessBridge } from './types';
+export type { IBackendAPI, IProcessBridge } from './types';
 export { HttpBackend } from './http-backend';
 export { PythonProcessBridge, createPythonBridge } from './process-bridge';
 

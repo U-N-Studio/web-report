@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
-import { Form, Select, Input, Button, Card, message, Divider, Alert } from 'antd';
+import { Form, Select, Input, Button, Card, message, Divider } from 'antd';
+import * as api from '../services/api';
 
 export default function SettingsPage() {
   const [form] = Form.useForm();
   const [aiMode, setAiMode] = useState('cloud');
 
   useEffect(() => {
-    window.electronAPI.getSettings().then((s) => {
+    api.getSettings().then((s) => {
       const settings = s as Record<string, string>;
       form.setFieldsValue({
         aiMode: settings.aiMode || 'cloud',
@@ -21,7 +22,7 @@ export default function SettingsPage() {
   }, [form]);
 
   const handleSave = async (values: Record<string, string>) => {
-    await window.electronAPI.saveSettings(values);
+    await api.saveSettings(values);
     message.success('设置已保存');
   };
 

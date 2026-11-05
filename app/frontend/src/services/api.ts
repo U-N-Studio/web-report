@@ -1,10 +1,16 @@
-import type { IpcChannels, IpcChannelName, IpcParams, IpcReturns } from '../../electron/ipc/contract';
+import type { IpcChannelName, IpcParams, IpcReturns } from '../../../electron/ipc/contract';
 
 type ElectronAPI = {
   [C in IpcChannelName]: (...args: IpcParams<C>) => IpcReturns<C>;
 };
 
-const api = window.electronAPI as ElectronAPI;
+declare global {
+  interface Window {
+    electronAPI: ElectronAPI;
+  }
+}
+
+const api = window.electronAPI;
 
 export const fetchHomepage = (platform: string) => api['fetch-homepage'](platform);
 export const searchVideos = (platform: string, keyword: string, url?: string) => api['search-and-analyze']({ platform, keyword, url });

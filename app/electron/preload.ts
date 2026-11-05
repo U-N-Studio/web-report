@@ -1,15 +1,21 @@
 import { contextBridge, ipcRenderer } from 'electron';
-import type { IpcChannels, IpcChannelName, IpcParams, IpcReturns } from './ipc/contract';
 
-type IpcBridge = {
-  [C in IpcChannelName]: (...args: IpcParams<C>) => IpcReturns<C>;
-};
+const channels = [
+  'fetch-homepage',
+  'search-and-analyze',
+  'analyze-video',
+  'get-reports',
+  'get-report-detail',
+  'update-comment-status',
+  'get-settings',
+  'save-settings',
+] as const;
 
-const bridge: IpcBridge = Object.fromEntries(
-  (Object.keys({} as IpcChannels) as IpcChannelName[]).map((channel) => [
+const bridge = Object.fromEntries(
+  channels.map((channel) => [
     channel,
     (...args: unknown[]) => ipcRenderer.invoke(channel, ...args),
   ]),
-) as IpcBridge;
+);
 
 contextBridge.exposeInMainWorld('electronAPI', bridge);
