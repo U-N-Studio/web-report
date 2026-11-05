@@ -1,6 +1,6 @@
 import { app, BrowserWindow } from 'electron';
 import path from 'path';
-import { getDatabase, closeDatabase } from './database';
+import { getDatabase, closeDatabase, getSettings } from './database';
 import { registerAllIPC } from './ipc';
 import { initBackend, createLocalPythonBackend, getBackend } from './backend';
 
@@ -31,12 +31,21 @@ function createWindow() {
   });
 }
 
-app.whenReady().then(() => {
+app.whenReady().then(async () => {
   initBackend(createLocalPythonBackend());
   registerAllIPC();
   getDatabase();
   createWindow();
-  getBackend().start().catch(() => {});
+
+  try {
+    await getBackend().start();
+    const settings = getSettings();
+    if (Object.keys(settings).length > 0) {
+      await getBackend().api.updateConfig(settings);
+    }
+  } catch (e) {
+    console.error('Backend startup failed:', e);
+  }
 });
 
 app.on('window-all-closed', () => {

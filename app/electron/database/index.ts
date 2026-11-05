@@ -87,7 +87,6 @@ export function updateCommentViolation(id: string, isViolation: boolean) {
 
 export function getSettings() {
   const d = getDatabase();
-  d.exec(`CREATE TABLE IF NOT EXISTS settings (key TEXT PRIMARY KEY, value TEXT)`);
   const rows = d.prepare(`SELECT key, value FROM settings`).all();
   const result: Record<string, string> = {};
   for (const row of rows as { key: string; value: string }[]) {
@@ -98,11 +97,10 @@ export function getSettings() {
 
 export function saveSettings(settings: Record<string, unknown>) {
   const d = getDatabase();
-  d.exec(`CREATE TABLE IF NOT EXISTS settings (key TEXT PRIMARY KEY, value TEXT)`);
   const upsert = d.prepare(`INSERT OR REPLACE INTO settings (key, value) VALUES (?, ?)`);
   const run = d.transaction(() => {
     for (const [key, value] of Object.entries(settings)) {
-      upsert.run(key, JSON.stringify(value));
+      upsert.run(key, String(value));
     }
   });
   run();
