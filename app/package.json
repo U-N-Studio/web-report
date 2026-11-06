@@ -2,17 +2,18 @@
   "name": "web-report",
   "version": "1.0.0",
   "description": "",
-  "main": "dist-electron/main.js",
+  "main": "dist-electron/electron/main.js",
   "directories": {
     "doc": "../docs"
   },
   "scripts": {
     "dev": "npx vite",
     "gen-ipc": "npx tsx scripts/gen-ipc.ts",
-    "build": "npx tsx scripts/gen-ipc.ts && npx tsc --project tsconfig.electron.json && npx vite build",
+    "build:electron": "npx tsc --project tsconfig.electron.json && npx tsc-alias -p tsconfig.electron.json",
+    "build": "npx tsx scripts/gen-ipc.ts && npx tsc --project tsconfig.electron.json && npx tsc-alias -p tsconfig.electron.json && npx vite build",
     "preview": "npx vite preview",
-    "electron:start": "npx tsx scripts/gen-ipc.ts && npx tsc --project tsconfig.electron.json && npx vite build && npx electron .",
-    "electron:build": "npx tsx scripts/gen-ipc.ts && npx tsc --project tsconfig.electron.json && npx vite build && npx electron-builder"
+    "electron:start": "npx tsx scripts/gen-ipc.ts && npx tsc --project tsconfig.electron.json && npx tsc-alias -p tsconfig.electron.json && npx vite build && npx electron .",
+    "electron:build": "npx tsx scripts/gen-ipc.ts && npx tsc --project tsconfig.electron.json && npx tsc-alias -p tsconfig.electron.json && npx vite build && npx electron-builder"
   },
   "keywords": [],
   "author": "",
@@ -36,6 +37,7 @@
     "@vitejs/plugin-react": "^4.7.0",
     "electron": "^28.3.3",
     "electron-builder": "^24.13.3",
+    "tsc-alias": "^1.9.10",
     "tsx": "^4.23.15",
     "typescript": "^5.9.3",
     "vite": "^5.4.21"
