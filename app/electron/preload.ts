@@ -1,8 +1,8 @@
 import { contextBridge, ipcRenderer } from 'electron';
-import { IPC_CHANNELS } from '@shared/ipc';
+import { ipcHandlers } from './ipc/handlers';
 
 const bridge = Object.fromEntries(
-  IPC_CHANNELS.map((channel) => [
+  Object.keys(ipcHandlers).map((channel) => [
     channel,
     (...args: unknown[]) => ipcRenderer.invoke(channel, ...args),
   ]),
