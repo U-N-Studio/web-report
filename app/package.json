@@ -8,11 +8,11 @@
   },
   "scripts": {
     "dev": "npx vite",
-    "check-ipc": "npx tsx scripts/check-ipc.ts",
-    "build": "npx tsx scripts/check-ipc.ts && npx tsc --project tsconfig.electron.json && npx vite build",
+    "gen-ipc": "npx tsx scripts/gen-ipc.ts",
+    "build": "npx tsx scripts/gen-ipc.ts && npx tsc --project tsconfig.electron.json && npx vite build",
     "preview": "npx vite preview",
-    "electron:start": "npx tsx scripts/check-ipc.ts && npx tsc --project tsconfig.electron.json && npx vite build && npx electron .",
-    "electron:build": "npx tsx scripts/check-ipc.ts && npx tsc --project tsconfig.electron.json && npx vite build && npx electron-builder"
+    "electron:start": "npx tsx scripts/gen-ipc.ts && npx tsc --project tsconfig.electron.json && npx vite build && npx electron .",
+    "electron:build": "npx tsx scripts/gen-ipc.ts && npx tsc --project tsconfig.electron.json && npx vite build && npx electron-builder"
   },
   "keywords": [],
   "author": "",
