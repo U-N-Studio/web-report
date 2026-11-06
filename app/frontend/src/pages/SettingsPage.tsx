@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Form, Select, Input, Button, Card, message, Divider } from 'antd';
-import * as api from '../services/api';
+import api from '../services/api';
 
 export default function SettingsPage() {
   const [form] = Form.useForm();

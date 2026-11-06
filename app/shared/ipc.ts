@@ -2,7 +2,7 @@ import type { Video, AnalyzeResult, Report, ReportDetail, Settings } from './typ
 
 export const IPC_CHANNELS = [
   'fetch-homepage',
-  'search-and-analyze',
+  'search-videos',
   'analyze-video',
   'get-reports',
   'get-report-detail',
@@ -18,7 +18,7 @@ export interface IpcChannels {
     params: [platform: string];
     returns: Promise<Video[]>;
   };
-  'search-and-analyze': {
+  'search-videos': {
     params: [params: { platform: string; keyword: string; url?: string }];
     returns: Promise<Video[]>;
   };
@@ -50,3 +50,14 @@ export interface IpcChannels {
 
 export type IpcParams<C extends IpcChannelName> = IpcChannels[C]['params'];
 export type IpcReturns<C extends IpcChannelName> = IpcChannels[C]['returns'];
+
+export type IpcService = {
+  [C in IpcChannelName as KebabToCamel<C>]: (...args: IpcParams<C>) => IpcReturns<C>;
+};
+
+type KebabToCamel<S extends string> =
+  S extends `${infer Head}-${infer Rest}`
+    ? Rest extends `${infer First}${infer Tail}`
+      ? `${Head}${Uppercase<First>}${KebabToCamel<Tail>}`
+      : never
+    : S;

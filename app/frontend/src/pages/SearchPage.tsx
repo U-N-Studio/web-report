@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { List, Button, Typography, message, Image } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import SearchBar from '../components/SearchBar';
-import * as api from '../services/api';
+import api from '../services/api';
 import type { Video } from '@shared/types';
 
 const { Text } = Typography;
@@ -31,7 +31,7 @@ export default function SearchPage() {
     if (!keyword.trim()) return;
     setLoading(true);
     try {
-      const result = await api.searchVideos(platform, keyword);
+      const result = await api.searchVideos({ platform, keyword });
       setVideos(result);
     } catch {
       message.error('搜索失败');

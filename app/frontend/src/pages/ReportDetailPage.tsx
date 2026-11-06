@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { Typography, Button, Statistic, Row, Col, Card } from 'antd';
 import { ArrowLeftOutlined } from '@ant-design/icons';
 import CommentCard from '../components/CommentCard';
-import * as api from '../services/api';
+import api from '../services/api';
 import type { ReportDetail } from '@shared/types';
 
 const { Title } = Typography;

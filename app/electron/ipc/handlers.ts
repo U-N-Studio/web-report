@@ -7,7 +7,7 @@ export const ipcHandlers: {
   [C in IpcChannelName]: (...args: IpcParams<C>) => IpcReturns<C>;
 } = {
   'fetch-homepage': (platform) => reportService.fetchHomepage(platform),
-  'search-and-analyze': (params) => reportService.searchVideos(params),
+  'search-videos': (params) => reportService.searchVideos(params),
   'analyze-video': (params) => reportService.analyzeAndSaveReport(params),
   'get-reports': () => reportService.getReports(),
   'get-report-detail': (reportId) => reportService.getReportDetail(reportId),

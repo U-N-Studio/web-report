@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { List, Tag, Typography, Empty } from 'antd';
 import { useNavigate } from 'react-router-dom';
-import * as api from '../services/api';
+import api from '../services/api';
 import type { Report } from '@shared/types';
 
 const { Text } = Typography;
