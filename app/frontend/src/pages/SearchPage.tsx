@@ -2,12 +2,13 @@ import { useState, useEffect } from 'react';
 import { List, Button, Typography, message, Image } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import SearchBar from '../components/SearchBar';
-import * as api from '../services/api';
+import { ipc } from '../services/api';
+import type { Video } from '../../../electron/backend/types';
 
 const { Text } = Typography;
 
 export default function SearchPage() {
-  const [videos, setVideos] = useState<unknown[]>([]);
+  const [videos, setVideos] = useState<Video[]>([]);
   const [loading, setLoading] = useState(false);
   const [selectedPlatform, setSelectedPlatform] = useState('bilibili');
   const navigate = useNavigate();
@@ -15,8 +16,8 @@ export default function SearchPage() {
   useEffect(() => {
     if (selectedPlatform === 'bilibili') {
       setLoading(true);
-      api.fetchHomepage('bilibili').then((r: unknown) => {
-        setVideos(r as unknown[]);
+      ipc('fetch-homepage', 'bilibili').then((r) => {
+        setVideos(r);
       }).catch(() => {
         message.error('加载首页失败');
       }).finally(() => setLoading(false));
@@ -30,8 +31,8 @@ export default function SearchPage() {
     setLoading(true);
     setSelectedPlatform(platform);
     try {
-      const result = await api.searchVideos(platform, keyword);
-      setVideos(result as unknown[]);
+      const result = await ipc('search-and-analyze', { platform, keyword });
+      setVideos(result);
     } catch {
       message.error('搜索失败');
     } finally {
@@ -42,17 +43,16 @@ export default function SearchPage() {
   const handleAnalyze = async (videoId: string) => {
     setLoading(true);
     try {
-      const result = await api.analyzeVideo({
+      const result = await ipc('analyze-video', {
         platform: selectedPlatform,
         videoId,
         aiMode: 'cloud',
       });
-      const r = result as { reportId: string; total: number; flagged: number };
-      if (r.total === 0) {
+      if (result.total === 0) {
         message.warning('该视频暂无评论数据，请先在设置页配置 B站 SESSDATA');
       } else {
-        message.success(`分析完成：${r.total} 条评论，${r.flagged} 条违规`);
-        navigate(`/reports/${r.reportId}`);
+        message.success(`分析完成：${result.total} 条评论，${result.flagged} 条违规`);
+        navigate(`/reports/${result.reportId}`);
       }
     } catch (err) {
       const msg = (err as { message?: string })?.message || '分析失败';
@@ -71,7 +71,7 @@ export default function SearchPage() {
       <SearchBar onSearch={handleSearch} loading={loading} />
       <List
         loading={loading}
-        dataSource={videos as { id: string; title: string; url: string; author?: string; thumbnail?: string }[]}
+        dataSource={videos}
         renderItem={(item) => (
           <List.Item
             actions={[

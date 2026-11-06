@@ -1,23 +1,24 @@
 import { useEffect, useState } from 'react';
 import { List, Tag, Typography, Empty } from 'antd';
 import { useNavigate } from 'react-router-dom';
-import * as api from '../services/api';
+import { ipc } from '../services/api';
+import type { ReportRow } from '../../../electron/database/types';
 
 const { Text } = Typography;
 
 export default function ReportPage() {
-  const [reports, setReports] = useState<unknown[]>([]);
+  const [reports, setReports] = useState<ReportRow[]>([]);
   const navigate = useNavigate();
 
   useEffect(() => {
-    api.getReports().then((r: unknown) => setReports(r as unknown[]));
+    ipc('get-reports').then((r) => setReports(r));
   }, []);
 
   if (reports.length === 0) return <Empty description="暂无报告" />;
 
   return (
     <List
-      dataSource={reports as { id: string; platform: string; url: string; title?: string; keyword?: string; total_comments: number; flagged_comments: number; created_at: string }[]}
+      dataSource={reports}
       renderItem={(item) => (
         <List.Item
           style={{ cursor: 'pointer' }}

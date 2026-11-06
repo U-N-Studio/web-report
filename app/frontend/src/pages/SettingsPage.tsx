@@ -1,14 +1,13 @@
 import { useEffect, useState } from 'react';
 import { Form, Select, Input, Button, Card, message, Divider } from 'antd';
-import * as api from '../services/api';
+import { ipc } from '../services/api';
 
 export default function SettingsPage() {
   const [form] = Form.useForm();
   const [aiMode, setAiMode] = useState('cloud');
 
   useEffect(() => {
-    api.getSettings().then((s) => {
-      const settings = s as Record<string, string>;
+    ipc('get-settings').then((settings) => {
       form.setFieldsValue({
         aiMode: settings.aiMode || 'cloud',
         apiKey: settings.apiKey || '',
@@ -22,7 +21,7 @@ export default function SettingsPage() {
   }, [form]);
 
   const handleSave = async (values: Record<string, string>) => {
-    await api.saveSettings(values);
+    await ipc('save-settings', values);
     message.success('设置已保存');
   };
 

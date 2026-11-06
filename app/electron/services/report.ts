@@ -2,6 +2,7 @@ import { v4 as uuid } from 'uuid';
 import { createReport, insertComment, getAllReports, getReportById, updateCommentViolation, getSettings, saveSettings } from '../database';
 import { getBackend } from '../backend';
 import type { AnalyzeResult, Video } from '../backend/types';
+import type { ReportRow, ReportDetail } from '../database/types';
 
 export async function fetchHomepage(platform: string): Promise<Video[]> {
   return getBackend().api.fetchHomepage(platform);
@@ -54,11 +55,11 @@ export async function analyzeAndSaveReport(params: {
   return { reportId, ...analyzeResp };
 }
 
-export async function getReports() {
+export async function getReports(): Promise<ReportRow[]> {
   return getAllReports();
 }
 
-export async function getReportDetail(reportId: string) {
+export async function getReportDetail(reportId: string): Promise<ReportDetail> {
   return getReportById(reportId);
 }
 

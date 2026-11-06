@@ -1,5 +1,8 @@
+import type { IpcChannelName } from './channels';
+export type { IpcChannelName };
 import * as reportService from '../services/report';
 import type { AnalyzeResult, Video } from '../backend/types';
+import type { ReportRow, ReportDetail } from '../database/types';
 
 export interface IpcChannels {
   'fetch-homepage': {
@@ -16,11 +19,11 @@ export interface IpcChannels {
   };
   'get-reports': {
     params: [];
-    returns: Promise<unknown[]>;
+    returns: Promise<ReportRow[]>;
   };
   'get-report-detail': {
     params: [reportId: string];
-    returns: Promise<unknown>;
+    returns: Promise<ReportDetail>;
   };
   'update-comment-status': {
     params: [commentId: string, isViolation: boolean];
@@ -36,7 +39,6 @@ export interface IpcChannels {
   };
 }
 
-export type IpcChannelName = keyof IpcChannels;
 export type IpcParams<C extends IpcChannelName> = IpcChannels[C]['params'];
 export type IpcReturns<C extends IpcChannelName> = IpcChannels[C]['returns'];
 

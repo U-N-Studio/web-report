@@ -2,6 +2,7 @@ import Database from 'better-sqlite3';
 import path from 'path';
 import { app } from 'electron';
 import { MIGRATIONS } from './migrations';
+import type { ReportRow, ReportDetail, CommentRow } from './types';
 
 let db: Database.Database | null = null;
 
@@ -68,16 +69,16 @@ export function insertComment(comment: {
   ).run(comment.id, comment.reportId, comment.author ?? null, comment.content, comment.originalUrl ?? null, comment.category ?? null, comment.isViolation ? 1 : 0, comment.confidence, comment.aiReason ?? null);
 }
 
-export function getAllReports() {
+export function getAllReports(): ReportRow[] {
   const d = getDatabase();
-  return d.prepare(`SELECT * FROM reports ORDER BY created_at DESC`).all();
+  return d.prepare(`SELECT * FROM reports ORDER BY created_at DESC`).all() as ReportRow[];
 }
 
-export function getReportById(id: string) {
+export function getReportById(id: string): ReportDetail {
   const d = getDatabase();
-  const report = d.prepare(`SELECT * FROM reports WHERE id = ?`).get(id);
-  const comments = d.prepare(`SELECT * FROM comments WHERE report_id = ?`).all(id);
-  return { ...(report as object), comments };
+  const report = d.prepare(`SELECT * FROM reports WHERE id = ?`).get(id) as ReportRow;
+  const comments = d.prepare(`SELECT * FROM comments WHERE report_id = ?`).all(id) as CommentRow[];
+  return { ...report, comments };
 }
 
 export function updateCommentViolation(id: string, isViolation: boolean) {

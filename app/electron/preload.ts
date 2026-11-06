@@ -1,18 +1,8 @@
 import { contextBridge, ipcRenderer } from 'electron';
-
-const channels = [
-  'fetch-homepage',
-  'search-and-analyze',
-  'analyze-video',
-  'get-reports',
-  'get-report-detail',
-  'update-comment-status',
-  'get-settings',
-  'save-settings',
-] as const;
+import { IPC_CHANNELS } from './ipc/channels';
 
 const bridge = Object.fromEntries(
-  channels.map((channel) => [
+  IPC_CHANNELS.map((channel) => [
     channel,
     (...args: unknown[]) => ipcRenderer.invoke(channel, ...args),
   ]),

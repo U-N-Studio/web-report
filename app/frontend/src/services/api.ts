@@ -10,18 +10,13 @@ declare global {
   }
 }
 
-function getApi(): ElectronAPI {
+export function ipc<C extends IpcChannelName>(
+  channel: C,
+  ...args: IpcParams<C>
+): IpcReturns<C> {
   if (!window.electronAPI) {
     throw new Error('electronAPI not available — preload may have failed to load');
   }
-  return window.electronAPI;
+  const fn = window.electronAPI[channel] as (...a: unknown[]) => unknown;
+  return fn(...args) as IpcReturns<C>;
 }
-
-export const fetchHomepage = (platform: string) => getApi()['fetch-homepage'](platform);
-export const searchVideos = (platform: string, keyword: string, url?: string) => getApi()['search-and-analyze']({ platform, keyword, url });
-export const analyzeVideo = (params: IpcParams<'analyze-video'>[0]) => getApi()['analyze-video'](params);
-export const getReports = () => getApi()['get-reports']();
-export const getReportDetail = (reportId: string) => getApi()['get-report-detail'](reportId);
-export const updateCommentStatus = (commentId: string, isViolation: boolean) => getApi()['update-comment-status'](commentId, isViolation);
-export const getSettings = () => getApi()['get-settings']();
-export const saveSettings = (settings: Record<string, unknown>) => getApi()['save-settings'](settings);
