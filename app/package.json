@@ -8,10 +8,11 @@
   },
   "scripts": {
     "dev": "npx vite",
-    "build": "npx tsc --project tsconfig.electron.json && npx vite build",
+    "check-ipc": "npx tsx scripts/check-ipc.ts",
+    "build": "npx tsx scripts/check-ipc.ts && npx tsc --project tsconfig.electron.json && npx vite build",
     "preview": "npx vite preview",
-    "electron:start": "npx tsc --project tsconfig.electron.json && npx vite build && npx electron .",
-    "electron:build": "npx tsc --project tsconfig.electron.json && npx vite build && npx electron-builder"
+    "electron:start": "npx tsx scripts/check-ipc.ts && npx tsc --project tsconfig.electron.json && npx vite build && npx electron .",
+    "electron:build": "npx tsx scripts/check-ipc.ts && npx tsc --project tsconfig.electron.json && npx vite build && npx electron-builder"
   },
   "keywords": [],
   "author": "",
@@ -34,6 +35,7 @@
     "@vitejs/plugin-react": "^4.7.0",
     "electron": "^28.3.3",
     "electron-builder": "^24.13.3",
+    "tsx": "^4.23.15",
     "typescript": "^5.9.3",
     "vite": "^5.4.21"
   }
