@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import { List, Button, Typography, message, Image } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import SearchBar from '../components/SearchBar';
-import { ipc } from '../services/api';
-import type { Video } from '../../../electron/backend/types';
+import * as api from '../services/api';
+import type { Video } from '@shared/types';
 
 const { Text } = Typography;
 
@@ -16,7 +16,7 @@ export default function SearchPage() {
   useEffect(() => {
     if (selectedPlatform === 'bilibili') {
       setLoading(true);
-      ipc('fetch-homepage', 'bilibili').then((r) => {
+      api.fetchHomepage('bilibili').then((r) => {
         setVideos(r);
       }).catch(() => {
         message.error('加载首页失败');
@@ -27,11 +27,11 @@ export default function SearchPage() {
   }, [selectedPlatform]);
 
   const handleSearch = async (platform: string, keyword: string) => {
+    setSelectedPlatform(platform);
     if (!keyword.trim()) return;
     setLoading(true);
-    setSelectedPlatform(platform);
     try {
-      const result = await ipc('search-and-analyze', { platform, keyword });
+      const result = await api.searchVideos(platform, keyword);
       setVideos(result);
     } catch {
       message.error('搜索失败');
@@ -43,7 +43,7 @@ export default function SearchPage() {
   const handleAnalyze = async (videoId: string) => {
     setLoading(true);
     try {
-      const result = await ipc('analyze-video', {
+      const result = await api.analyzeVideo({
         platform: selectedPlatform,
         videoId,
         aiMode: 'cloud',

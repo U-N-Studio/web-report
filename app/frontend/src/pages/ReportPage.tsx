@@ -1,17 +1,17 @@
 import { useEffect, useState } from 'react';
 import { List, Tag, Typography, Empty } from 'antd';
 import { useNavigate } from 'react-router-dom';
-import { ipc } from '../services/api';
-import type { ReportRow } from '../../../electron/database/types';
+import * as api from '../services/api';
+import type { Report } from '@shared/types';
 
 const { Text } = Typography;
 
 export default function ReportPage() {
-  const [reports, setReports] = useState<ReportRow[]>([]);
+  const [reports, setReports] = useState<Report[]>([]);
   const navigate = useNavigate();
 
   useEffect(() => {
-    ipc('get-reports').then((r) => setReports(r));
+    api.getReports().then((r) => setReports(r));
   }, []);
 
   if (reports.length === 0) return <Empty description="暂无报告" />;
@@ -29,9 +29,9 @@ export default function ReportPage() {
             description={
               <div>
                 <Tag>{item.platform}</Tag>
-                <Text type="secondary">评论: {item.total_comments} | 违规: {item.flagged_comments}</Text>
+                <Text type="secondary">评论: {item.totalComments} | 违规: {item.flaggedComments}</Text>
                 <br />
-                <Text type="secondary">{item.created_at}</Text>
+                <Text type="secondary">{item.createdAt}</Text>
               </div>
             }
           />

@@ -1,5 +1,5 @@
 import { contextBridge, ipcRenderer } from 'electron';
-import { IPC_CHANNELS } from './ipc/channels';
+import { IPC_CHANNELS } from '@shared/ipc';
 
 const bridge = Object.fromEntries(
   IPC_CHANNELS.map((channel) => [

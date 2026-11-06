@@ -1,8 +1,8 @@
 import { v4 as uuid } from 'uuid';
 import { createReport, insertComment, getAllReports, getReportById, updateCommentViolation, getSettings, saveSettings } from '../database';
 import { getBackend } from '../backend';
-import type { AnalyzeResult, Video } from '../backend/types';
-import type { ReportRow, ReportDetail } from '../database/types';
+import type { AnalyzeResult, Video } from '@shared/types';
+import type { Report, ReportDetail, Settings } from '@shared/types';
 
 export async function fetchHomepage(platform: string): Promise<Video[]> {
   return getBackend().api.fetchHomepage(platform);
@@ -55,7 +55,7 @@ export async function analyzeAndSaveReport(params: {
   return { reportId, ...analyzeResp };
 }
 
-export async function getReports(): Promise<ReportRow[]> {
+export async function getReports(): Promise<Report[]> {
   return getAllReports();
 }
 
@@ -67,7 +67,7 @@ export async function updateCommentStatus(commentId: string, isViolation: boolea
   updateCommentViolation(commentId, isViolation);
 }
 
-export async function getSettingsData() {
+export async function getSettingsData(): Promise<Settings> {
   return getSettings();
 }
 

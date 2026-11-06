@@ -16,8 +16,9 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "paths": {
-      "@/*": ["./frontend/src/*"]
+      "@/*": ["./frontend/src/*"],
+      "@shared/*": ["./shared/*"]
     }
   },
-  "include": ["frontend/src", "electron"]
+  "include": ["frontend/src", "electron", "shared"]
 }

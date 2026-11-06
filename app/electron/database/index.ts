@@ -2,7 +2,31 @@ import Database from 'better-sqlite3';
 import path from 'path';
 import { app } from 'electron';
 import { MIGRATIONS } from './migrations';
-import type { ReportRow, ReportDetail, CommentRow } from './types';
+import type { Report, ReportDetail, ReportComment, Settings } from '@shared/types';
+
+interface ReportRow {
+  id: string;
+  platform: string;
+  url: string;
+  title: string | null;
+  keyword: string | null;
+  total_comments: number;
+  flagged_comments: number;
+  created_at: string;
+}
+
+interface CommentRow {
+  id: string;
+  report_id: string;
+  author: string | null;
+  content: string;
+  original_url: string | null;
+  category: string | null;
+  is_violation: number;
+  confidence: number;
+  ai_reason: string | null;
+  created_at: string;
+}
 
 let db: Database.Database | null = null;
 
@@ -69,16 +93,43 @@ export function insertComment(comment: {
   ).run(comment.id, comment.reportId, comment.author ?? null, comment.content, comment.originalUrl ?? null, comment.category ?? null, comment.isViolation ? 1 : 0, comment.confidence, comment.aiReason ?? null);
 }
 
-export function getAllReports(): ReportRow[] {
+function mapReport(row: ReportRow): Report {
+  return {
+    id: row.id,
+    platform: row.platform,
+    url: row.url,
+    title: row.title ?? undefined,
+    keyword: row.keyword ?? undefined,
+    totalComments: row.total_comments,
+    flaggedComments: row.flagged_comments,
+    createdAt: row.created_at,
+  };
+}
+
+function mapComment(row: CommentRow): ReportComment {
+  return {
+    id: row.id,
+    author: row.author ?? undefined,
+    content: row.content,
+    originalUrl: row.original_url ?? undefined,
+    category: row.category ?? undefined,
+    isViolation: !!row.is_violation,
+    confidence: row.confidence,
+    aiReason: row.ai_reason ?? undefined,
+  };
+}
+
+export function getAllReports(): Report[] {
   const d = getDatabase();
-  return d.prepare(`SELECT * FROM reports ORDER BY created_at DESC`).all() as ReportRow[];
+  const rows = d.prepare(`SELECT * FROM reports ORDER BY created_at DESC`).all() as ReportRow[];
+  return rows.map(mapReport);
 }
 
 export function getReportById(id: string): ReportDetail {
   const d = getDatabase();
-  const report = d.prepare(`SELECT * FROM reports WHERE id = ?`).get(id) as ReportRow;
-  const comments = d.prepare(`SELECT * FROM comments WHERE report_id = ?`).all(id) as CommentRow[];
-  return { ...report, comments };
+  const row = d.prepare(`SELECT * FROM reports WHERE id = ?`).get(id) as ReportRow;
+  const commentRows = d.prepare(`SELECT * FROM comments WHERE report_id = ?`).all(id) as CommentRow[];
+  return { ...mapReport(row), comments: commentRows.map(mapComment) };
 }
 
 export function updateCommentViolation(id: string, isViolation: boolean) {
@@ -86,11 +137,11 @@ export function updateCommentViolation(id: string, isViolation: boolean) {
   d.prepare(`UPDATE comments SET is_violation = ? WHERE id = ?`).run(isViolation ? 1 : 0, id);
 }
 
-export function getSettings() {
+export function getSettings(): Settings {
   const d = getDatabase();
-  const rows = d.prepare(`SELECT key, value FROM settings`).all();
-  const result: Record<string, string> = {};
-  for (const row of rows as { key: string; value: string }[]) {
+  const rows = d.prepare(`SELECT key, value FROM settings`).all() as { key: string; value: string }[];
+  const result: Settings = {};
+  for (const row of rows) {
     result[row.key] = row.value;
   }
   return result;

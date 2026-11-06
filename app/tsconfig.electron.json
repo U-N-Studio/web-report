@@ -6,9 +6,12 @@
     "strict": true,
     "skipLibCheck": true,
     "outDir": "dist-electron",
-    "rootDir": "electron",
+    "rootDir": ".",
     "resolveJsonModule": true,
-    "declaration": false
+    "declaration": false,
+    "paths": {
+      "@shared/*": ["./shared/*"]
+    }
   },
-  "include": ["electron"]
+  "include": ["electron", "shared"]
 }

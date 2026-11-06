@@ -1,5 +1,6 @@
 import { ipcMain } from 'electron';
-import { ipcHandlers, IpcChannelName } from './contract';
+import { ipcHandlers } from './handlers';
+import type { IpcChannelName } from '@shared/ipc';
 
 export function registerAllIPC() {
   for (const channel of Object.keys(ipcHandlers) as IpcChannelName[]) {
