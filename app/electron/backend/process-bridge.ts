@@ -42,29 +42,35 @@ export class PythonProcessBridge implements IProcessBridge {
         stdio: ['pipe', 'pipe', 'pipe'],
       });
 
+      const timer = setTimeout(() => {
+        if (!this.ready) {
+          this.process?.kill();
+          this.process = null;
+          reject(new Error(`Backend failed to start within 5 seconds`));
+        }
+      }, 5000);
+
       const checkReady = (data: Buffer) => {
         if (!this.ready && data.toString().includes(this.readyPattern)) {
           this.ready = true;
+          clearTimeout(timer);
           resolve(this.port);
         }
       };
 
       this.process.stdout?.on('data', checkReady);
       this.process.stderr?.on('data', checkReady);
-      this.process.on('error', reject);
+      this.process.on('error', (err) => {
+        clearTimeout(timer);
+        reject(err);
+      });
 
       this.process.on('exit', (code) => {
+        clearTimeout(timer);
         if (!this.ready) {
           reject(new Error(`Backend process exited with code ${code} before becoming ready`));
         }
       });
-
-      setTimeout(() => {
-        if (!this.ready) {
-          this.ready = true;
-          reject(new Error(`Backend failed to start within 5 seconds`));
-        }
-      }, 5000);
     });
   }
 

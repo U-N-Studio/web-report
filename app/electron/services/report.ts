@@ -71,7 +71,7 @@ export async function getSettingsData(): Promise<Settings> {
   return getSettings();
 }
 
-export async function saveSettingsData(settings: Record<string, unknown>) {
+export async function saveSettingsData(settings: Settings) {
   saveSettings(settings);
   await getBackend().api.updateConfig(settings);
 }

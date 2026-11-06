@@ -1,5 +1,5 @@
 import type { Video, AnalyzeResult, Report, ReportDetail, Settings } from './types';
-
+export type { Settings } from './types';
 export const IPC_CHANNELS = [
   'fetch-homepage',
   'search-videos',
@@ -50,7 +50,7 @@ export interface IpcChannels {
     handler: 'reportService.getSettingsData';
   };
   'save-settings': {
-    params: [settings: Record<string, unknown>];
+    params: [settings: Settings];
     returns: Promise<void>;
     handler: 'reportService.saveSettingsData';
   };

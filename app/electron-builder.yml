@@ -1,7 +1,7 @@
 appId: com.webreport.app
 productName: Web Report
 directories:
-  output: dist-electron
+  output: release
   app: .
 files:
   - dist/**/*
