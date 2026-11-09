@@ -187,6 +187,8 @@ Electron 启动
   │         ├─ 5 秒超时 → kill 进程 + reject
   │         └─ ready → resolve(port)
   │
+  ├─ backend.api.checkHealth()     ← HTTP 确认服务可用
+  │
   └─ getBackend().api.fetchHomepage / search / analyze / updateConfig
        └─ fetch(`${baseUrl}${path}`, { method, body })
 ```

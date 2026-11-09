@@ -39,6 +39,7 @@ app.whenReady().then(async () => {
 
   try {
     await getBackend().start();
+    await getBackend().api.checkHealth();
     const settings = getSettings();
     if (Object.keys(settings).length > 0) {
       await getBackend().api.updateConfig(settings);

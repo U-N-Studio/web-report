@@ -24,7 +24,7 @@ export class HttpBackend implements IBackendAPI {
     });
   }
 
-  async health(): Promise<{ status: string }> {
+  async checkHealth(): Promise<{ status: string }> {
     return this.request('/health');
   }
 

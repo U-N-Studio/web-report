@@ -27,7 +27,7 @@ export interface BackendConfig {
 }
 
 export interface IBackendAPI {
-  health(): Promise<{ status: string }>;
+  checkHealth(): Promise<{ status: string }>;
   fetchHomepage(platform: string): Promise<Video[]>;
   search(params: SearchParams): Promise<Video[]>;
   analyze(params: AnalyzeParams): Promise<AnalyzeResult>;
